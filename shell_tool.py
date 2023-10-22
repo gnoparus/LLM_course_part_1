@@ -17,6 +17,8 @@ tools = [
     )
 ]
 
+# print(shell_tool.description)
+# print(shell_tool.args)
 
 agent_chain = initialize_agent(
     tools=tools,
