@@ -46,4 +46,5 @@ async def main(message: cl.Message):
     agent_chain = cl.user_session.get("agent")
     cb = cl.LangchainCallbackHandler(stream_final_answer=True)
 
-    await cl.make_async(agent_chain.run)(message.content, callbacks=[cb])
+    res = await cl.make_async(agent_chain.run)(message.content, callbacks=[cb])
+    await cl.Message(content=res).send()
